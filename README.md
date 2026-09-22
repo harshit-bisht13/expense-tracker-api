@@ -1,44 +1,51 @@
 # Expense Tracker API
 
-A Spring Boot backend project for managing personal expenses.
+A RESTful Expense Tracker API built with **Spring Boot**, **Spring Data JPA**, and **MySQL**.
 
-## Tech Stack
+This project is being built independently to practice backend development, REST APIs, JPA/Hibernate, database integration, and clean layered architecture.
+
+---
+
+## 🚀 Current Features
+
+- Create an expense
+- Get all expenses
+- Get an expense by ID
+- MySQL database integration
+- JPA/Hibernate ORM
+- Service and Repository layers
+- Dependency Injection
+- Automatic creation and update timestamps
+- Soft-delete field support
+
+---
+
+## 🛠️ Technologies Used
 
 - Java
 - Spring Boot
+- Spring Web
 - Spring Data JPA
+- Hibernate
 - MySQL
 - Maven
+- Postman
+- IntelliJ IDEA
+- Git & GitHub
 
-## Current Progress
+---
 
-- [x] Spring Boot project setup
-- [x] MySQL database connection
-- [x] Expense Entity
-- [x] Expense Repository
-- [ ] Expense Service
-- [ ] Expense Controller
-- [ ] CRUD APIs
-- [ ] Validation
-- [ ] Exception handling
-- [ ] Filtering and searching
-- [ ] Expense summaries
+## 🏗️ Project Architecture
 
-## Database
-
-MySQL database:
-
-`expenseTracker`
-
-## Project Structure
+The project follows a layered architecture:
 
 ```text
-src/main/java/com/example/expenseTracker
-│
-├── Entity
-│   └── Expense
-│
-├── repository
-│   └── ExpenseRepository
-│
-└── ExpenseTrackerApplication
+Client / Postman
+       ↓
+   Controller
+       ↓
+     Service
+       ↓
+   Repository
+       ↓
+      MySQL
