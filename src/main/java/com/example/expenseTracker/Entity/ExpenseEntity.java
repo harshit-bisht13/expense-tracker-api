@@ -1,4 +1,4 @@
-package com.example.expenceTracker.Entity;
+package com.example.expenseTracker.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 @Entity
 @Table
-public class Expense {
+public class ExpenseEntity {
     Long id;
     String title;
     double amount;
@@ -21,11 +21,12 @@ public class Expense {
     boolean deleted;
     @Id
     @GeneratedValue
-    public long getId() {
+    public Long getId() {
+
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
