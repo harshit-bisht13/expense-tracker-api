@@ -24,6 +24,13 @@ public class ControllerEntity {
     @GetMapping("/{id}")
     public ExpenseEntity getExpenseByID(@PathVariable Long id){
         return expenseService.getExpenseById(id);
-    }
 
+    }
+    @PutMapping("/{id}")
+    public ExpenseEntity updateExpense(
+            @PathVariable Long id,
+            @RequestBody ExpenseEntity expense) {
+
+        return expenseService.updateExpense(id, expense);
+    }
 }

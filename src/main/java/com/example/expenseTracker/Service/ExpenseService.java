@@ -26,4 +26,12 @@ public class ExpenseService {
         return expenseRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Expense not found"));
     }
+    public ExpenseEntity updateExpense(Long id, ExpenseEntity updatedExpense){
+        ExpenseEntity existingExpense= expenseRepository.findById(id)
+                .orElseThrow(()->new RuntimeException("Expense not found"));
+        existingExpense.setTitle(updatedExpense.getTitle());
+        existingExpense.setAmount(updatedExpense.getAmount());
+        existingExpense.setCategory(updatedExpense.getCategory());
+        return expenseRepository.save(existingExpense);
+    }
 }
