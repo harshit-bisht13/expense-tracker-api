@@ -1,5 +1,6 @@
 package com.example.expenseTracker.Service;
 
+import com.example.expenseTracker.exception.ExpenseNotFoundException;
 import com.example.expenseTracker.repository.ExpenseRepository;
 import org.springframework.stereotype.Service;
 import com.example.expenseTracker.Entity.ExpenseEntity;
@@ -25,11 +26,11 @@ public class ExpenseService {
     }
     public ExpenseEntity getExpenseById(Long id){
         return expenseRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Expense not found"));
+                .orElseThrow(() -> new ExpenseNotFoundException("Expense not found"));
     }
     public ExpenseEntity updateExpense(Long id, ExpenseEntity updatedExpense){
         ExpenseEntity existingExpense= expenseRepository.findById(id)
-                .orElseThrow(()->new RuntimeException("Expense not found"));
+                .orElseThrow(()->new ExpenseNotFoundException("Expense not found"));
         existingExpense.setTitle(updatedExpense.getTitle());
         existingExpense.setAmount(updatedExpense.getAmount());
         existingExpense.setCategory(updatedExpense.getCategory());
