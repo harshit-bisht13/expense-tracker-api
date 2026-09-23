@@ -1,57 +1,46 @@
-# 💰 Expense Tracker API
+# Expense Tracker API
 
-A RESTful Expense Tracker API built with **Java, Spring Boot, Spring Data JPA, and MySQL**.
+A RESTful Expense Tracker backend built using Spring Boot, Spring Data JPA, and MySQL.
 
-This project is being developed step-by-step to strengthen my backend development skills and understand how real-world REST APIs are designed.
+This project is being developed from scratch to practice building a real-world Spring Boot REST API without following a step-by-step tutorial.
 
----
-
-## 🚀 Tech Stack
-
-- Java
-- Spring Boot
-- Spring Data JPA
-- MySQL
-- Maven
-- REST API
-- Postman
-- Git & GitHub
-
----
-
-## ✨ Current Features
+## 🚀 Features
 
 - Create an expense
 - Get all expenses
 - Get an expense by ID
 - Update an expense
-- Soft-delete architecture using a `delete` flag
+- Delete an expense
+- Custom exception handling
+- Global exception handling
 - MySQL database integration
-- RESTful API structure
+- JPA/Hibernate ORM
+- Layered architecture
 
----
+## 🛠️ Tech Stack
 
-## 📌 API Endpoints
-
-| Method | Endpoint | Description | Status |
-|--------|----------|-------------|--------|
-| `POST` | `/expenses` | Create a new expense | ✅ |
-| `GET` | `/expenses` | Get all expenses | ✅ |
-| `GET` | `/expenses/{id}` | Get expense by ID | ✅ |
-| `PUT` | `/expenses/{id}` | Update an expense | ✅ |
-| `DELETE` | `/expenses/{id}` | Soft delete an expense | 🚧 |
-
----
+- Java
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- Hibernate
+- MySQL
+- Jakarta Validation
+- Maven
+- Git & GitHub
+- Postman
 
 ## 🏗️ Project Architecture
 
-The application follows a layered architecture:
+The project follows a layered architecture:
 
 ```text
+Client / Postman
+       ↓
 Controller
-     ↓
+       ↓
 Service
-     ↓
+       ↓
 Repository
-     ↓
-Database
+       ↓
+MySQL Database
