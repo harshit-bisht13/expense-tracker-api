@@ -20,6 +20,7 @@ public class ExpenseService {
         return expenseRepository.save(expense);
     }
     public List<ExpenseEntity> getAllExpenses(){
+
         return expenseRepository.findAll();
     }
     public ExpenseEntity getExpenseById(Long id){
@@ -33,5 +34,8 @@ public class ExpenseService {
         existingExpense.setAmount(updatedExpense.getAmount());
         existingExpense.setCategory(updatedExpense.getCategory());
         return expenseRepository.save(existingExpense);
+    }
+    public void deleteExpense(Long id){
+         expenseRepository.deleteById(id);
     }
 }
