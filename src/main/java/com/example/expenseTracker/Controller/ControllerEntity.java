@@ -2,6 +2,7 @@ package com.example.expenseTracker.Controller;
 
 import com.example.expenseTracker.Entity.ExpenseEntity;
 import com.example.expenseTracker.Service.ExpenseService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class ControllerEntity {
         this.expenseService=expenseService;
     }
     @PostMapping
-    public ExpenseEntity createExpense(@RequestBody ExpenseEntity expense){
+    public ExpenseEntity createExpense(@Valid @RequestBody ExpenseEntity expense){
         return expenseService.createExpense(expense);
     }
     @GetMapping
@@ -29,7 +30,7 @@ public class ControllerEntity {
     @PutMapping("/{id}")
     public ExpenseEntity updateExpense(
             @PathVariable Long id,
-            @RequestBody ExpenseEntity expense) {
+            @Valid @RequestBody ExpenseEntity expense) {
 
         return expenseService.updateExpense(id, expense);
     }

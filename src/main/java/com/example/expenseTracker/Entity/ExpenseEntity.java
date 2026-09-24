@@ -4,6 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -11,10 +14,17 @@ import java.time.LocalDateTime;
 @Table
 public class ExpenseEntity {
     Long id;
-    String title;
-    double amount;
-    String category;
-    LocalDate date;
+    @NotBlank(message = "Title is required")
+    private String title;
+
+    @Positive(message = "Amount must be greater than 0")
+    private double amount;
+
+    @NotBlank(message = "Category is required")
+    private String category;
+
+    @NotNull(message = "Date is required")
+    private LocalDate date;
     String description;
     LocalDateTime created_At;
     LocalDateTime updated_At;
