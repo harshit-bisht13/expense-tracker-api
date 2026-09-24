@@ -11,6 +11,7 @@ This project is being developed from scratch to practice building a real-world S
 - Get an expense by ID
 - Update an expense
 - Delete an expense
+- Request validation
 - Custom exception handling
 - Global exception handling
 - MySQL database integration
