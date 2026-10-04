@@ -6,6 +6,7 @@ import com.example.expenseTracker.exception.ExpenseNotFoundException;
 import com.example.expenseTracker.repository.ExpenseRepository;
 import org.springframework.stereotype.Service;
 import com.example.expenseTracker.Entity.ExpenseEntity;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -51,5 +52,12 @@ public class ExpenseService {
     }
     public void deleteExpense(Long id){
          expenseRepository.deleteById(id);
+    }
+    public List<ExpenseEntity> findByCategory(String Category) {
+        return expenseRepository.findByCategory(Category);
+    }
+    public List<ExpenseEntity> findByRange(double minAmount,double maxAmount){
+        return expenseRepository.findByAmountGreaterThanEqualAndAmountLessThanEqual(
+                minAmount, maxAmount);
     }
 }

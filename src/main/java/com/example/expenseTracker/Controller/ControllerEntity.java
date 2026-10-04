@@ -40,4 +40,13 @@ public class ControllerEntity {
     public void deleteExpense(@PathVariable Long id){
         expenseService.deleteExpense(id);
     }
+    @GetMapping(params = "category")
+    public  List<ExpenseEntity> findBycategory(@RequestParam String category){
+        return expenseService.findByCategory(category);
+    }
+    @RequestMapping
+    public List<ExpenseEntity> findByRange(@RequestParam double minAmount,
+                                           @RequestParam double maxAmount){
+        return expenseService.findByRange(minAmount,maxAmount);
+    }
 }
